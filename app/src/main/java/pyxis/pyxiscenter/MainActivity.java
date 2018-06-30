@@ -8,11 +8,8 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,7 +19,10 @@ public class MainActivity extends AppCompatActivity {
     ImageButton imageButton2;
     ImageButton imageButton3;
     ImageButton imageButton4;
+    ImageButton imageButton5;
     TextView title;
+    TextView version;
+    TextView version2;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -35,7 +35,24 @@ public class MainActivity extends AppCompatActivity {
         addListenerOnButton5();
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Product Sans Bold.ttf");
         TextView title = (TextView) findViewById(R.id.title);
+        TextView version = (TextView) findViewById(R.id.VT);
+        TextView version2 = (TextView) findViewById(R.id.version);
         title.setTypeface(font);
+        version.setTypeface(font);
+        version2.setTypeface(font);
+
+        imageButton5 = (ImageButton) findViewById(R.id.imageButton5);
+
+        imageButton5.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent i=new Intent(getApplicationContext(),faq.class);
+                startActivity(i);
+            }
+        });
+
     }
     public void addListenerOnButton() {
         button = (Button) findViewById(R.id.button);
@@ -144,13 +161,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
     public void Dialog() {
 
         new AlertDialog.Builder(this)
                 .setTitle("About Pyxis")
                 .setMessage("Pyxisn is a modified ROM based on official Nitrogen OS with some significant improvements.\n" +
                         "\n" +
-                        "Developer of Pyxis ROM: saurus280 and and mkenzo_8\n" +
+                        "Developer of Pyxis ROM: saurus280 and mkenzo_8\n" +
                         "\n" +
                         "Thanks: xyyx, Dmitry-777, XeonDead, psndna88")
 
