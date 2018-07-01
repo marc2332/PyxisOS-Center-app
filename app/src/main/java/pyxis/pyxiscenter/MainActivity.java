@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     TextView title;
     TextView version;
     TextView version2;
+    TextView changelog;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -37,9 +38,11 @@ public class MainActivity extends AppCompatActivity {
         TextView title = (TextView) findViewById(R.id.title);
         TextView version = (TextView) findViewById(R.id.VT);
         TextView version2 = (TextView) findViewById(R.id.version);
+        TextView changelog = (TextView) findViewById(R.id.ChangelogTitle);
         title.setTypeface(font);
         version.setTypeface(font);
         version2.setTypeface(font);
+        changelog.setTypeface(font);
 
         imageButton5 = (ImageButton) findViewById(R.id.imageButton5);
 

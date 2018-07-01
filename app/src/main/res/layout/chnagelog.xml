@@ -23,41 +23,12 @@
 
                 -->
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="0dp"
-            android:fontFamily="sans-serif"
-            android:text="Changelog"
-            android:textColor="@color/gray"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:typeface="sans"
-
-            app:layout_constraintStart_toStartOf="@+id/guideline3"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-            -
+        -
         <!--
 
                 CHANGELOG 2018-4-14
 
                 -->
-
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text=""
-            android:textColor="@color/gray"
-            app:layout_constraintStart_toStartOf="@+id/guideline3"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
 
 
         <TextView

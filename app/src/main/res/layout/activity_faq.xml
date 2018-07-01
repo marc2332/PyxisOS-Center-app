@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/AppTheme.NoActionBar"
+    android:background="#FFFFFF"
     tools:context=".faq">
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab1"
-        android:layout_width="60dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="28dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="24dp"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,27 +21,27 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="125dp"
-        android:layout_height="50dp"
+        android:layout_width="87dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="FAQ"
         android:textAlignment="viewStart"
         android:textColor="@color/colorAccent"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:id="@+id/cardView5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
         android:background="#ffffff"
-        android:elevation="5dp"
         app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/fab1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,20 +64,124 @@
                 <TextView
                     android:id="@+id/VT"
                     android:layout_width="match_parent"
-                    android:layout_height="39dp"
-                    android:text="Question1"
-                    android:textColor="@android:color/background_dark"
-                    android:textSize="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="What is Pyxis OS?"
+                    android:textColor="#4c4c4c"
+                    android:textSize="17dp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="39dp"
-                    android:text="answer"
+                    android:text="Pyxis OS is a custom ROM based on Nitrogen OS sources"
                     android:textColor="#545454"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/VT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#4c4c4c"
                     android:textSize="15dp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/VT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="What's the difference between Pyxis OS and Nitrogen OS?"
+                    android:textColor="#4c4c4c"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pyxis OS have some significant kernel improvements for smooth experience and awesome battery life. Also it have some UI changes"
+                    android:textColor="#545454"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/VT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#4c4c4c"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/VT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="How often ROM have updates?"
+                    android:textColor="#4c4c4c"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Stable: every 3 weeks; Open Beta: 1-2 times per week"
+                    android:textColor="#545454"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/VT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#4c4c4c"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/VT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="What's the difference between Stable and Open Beta versions?"
+                    android:textColor="#4c4c4c"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="All new features is present in Open Beta firstly and only after that in Stable"
+                    android:textColor="#545454"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/VT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#4c4c4c"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/VT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Can I moving among versions without wipes?"
+                    android:textColor="#4c4c4c"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Yes. You can move to Pyxis OS from Nitrogen OS and from stable to open beta and vice versa. Wipe Dlavick/ART cache and cache is enough"
+                    android:textColor="#545454"
+                    android:textSize="15dp" />
+
             </LinearLayout>
         </ScrollView>
 
