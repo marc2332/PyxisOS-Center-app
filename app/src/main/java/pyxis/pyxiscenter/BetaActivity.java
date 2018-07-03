@@ -2,18 +2,18 @@ package pyxis.pyxiscenter;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.graphics.Typeface;
 import android.net.Uri;
+import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class BetaActivity extends AppCompatActivity {
 
     String version;
     TextView text;
@@ -24,12 +24,11 @@ public class MainActivity extends AppCompatActivity {
     ImageButton imageButton4;
     ImageButton imageButton5;
     ImageButton settings;
-    ImageButton settings2;
     TextView title;
     String string;
 
     TextView version2;
-
+    TextView changelog;
 
     AlertDialog alertDialog1;
     CharSequence[] values = {" Stable version", " Beta version"};
@@ -37,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(string==null) {
-            setContentView(R.layout.content_stable);
-            string="aa";
-        }
+
+
+        setContentView(R.layout.content_beta);
+
 
 
         addListenerOnButton();
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         addListenerOnButton4();
         addListenerOnButton5();
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Product Sans Bold.ttf");
-        TextView title = (TextView) findViewById(R.id.title);
+        TextView title = (TextView) findViewById(R.id.title2);
         TextView version = (TextView) findViewById(R.id.VT);
         TextView version2 = (TextView) findViewById(R.id.version);
         TextView changelog = (TextView) findViewById(R.id.ChangelogTitle);
@@ -71,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        settings = (ImageButton) findViewById(R.id.settingsButton);
+        settings = (ImageButton) findViewById(R.id.settingsButton2);
         settings.setOnClickListener(new View.OnClickListener() {
 
 
@@ -86,30 +85,32 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-
-
     }
 
     public void CreateAlertDialogWithRadioButtonGroup() {
 
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(BetaActivity.this);
 
         builder.setTitle("Choose your version");
 
-        builder.setSingleChoiceItems(values, 0, new DialogInterface.OnClickListener() {
+        builder.setSingleChoiceItems(values, 1, new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int item) {
 
                 switch (item) {
                     case 0:
-                        Toast.makeText(getApplicationContext(),"You are alredy in Stable version", Toast.LENGTH_LONG).show();
-                        break;
-                    case 1:
+
                         finish();
-                        Intent i = new Intent(getApplicationContext(), BetaActivity.class);
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(i);
                         break;
+
+                    case 1:
+
+                        Toast.makeText(getApplicationContext(),"You are alredy in Beta version", Toast.LENGTH_LONG).show();
+                        break;
+
 
                 }
                 alertDialog1.dismiss();
@@ -119,13 +120,7 @@ public class MainActivity extends AppCompatActivity {
         alertDialog1.show();
 
     }
-    void reset2(){
 
-        Intent i = new Intent(getApplicationContext(), faq.class);
-        startActivity(i);
-
-
-    }
 
     public void addListenerOnButton() {
         button = (Button) findViewById(R.id.button);
@@ -135,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String url = getResources().getString(R.string.linkStable);
+                String url = getResources().getString(R.string.linkBeta);
 
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));

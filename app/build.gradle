@@ -1,9 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+
+        debug {
+        }
+    }
     compileSdkVersion 27
     defaultConfig {
-        applicationId "pyxis.pyxiscenter"
+        applicationId 'pyxis.pyxiscenter'
         minSdkVersion 23
         targetSdkVersion 27
         versionCode 1

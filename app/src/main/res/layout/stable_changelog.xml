@@ -7,7 +7,7 @@
     android:minHeight="250dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="pyxis.pyxiscenter.MainActivity"
-    tools:showIn="@layout/content_main">
+    tools:showIn="@layout/content_stable">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,13 +17,7 @@
 
 
 
-                <!--
 
-                Changelog tittle
-
-                -->
-
-        -
         <!--
 
                 CHANGELOG 2018-4-14

@@ -6,11 +6,10 @@
     android:layout_height="match_parent"
     android:background="@android:color/background_light"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context=".BetaActivity">
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/title2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -37,7 +36,7 @@
         app:cardElevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title">
+        app:layout_constraintTop_toBottomOf="@+id/title2">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -57,7 +56,7 @@
                 android:textSize="15dp"
                 app:layout_constraintBottom_toTopOf="@+id/cardView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:layout_constraintTop_toBottomOf="@+id/title2"
                 app:layout_constraintVertical_bias="1.0" />
 
             <TextView
@@ -66,12 +65,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/pyxisVersion"
+                android:text="@string/pyxisBeta"
                 android:textColor="@color/gray"
                 android:textSize="15dp"
                 app:layout_constraintBottom_toTopOf="@+id/cardView"
                 app:layout_constraintStart_toEndOf="@+id/VT"
-                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:layout_constraintTop_toBottomOf="@+id/title2"
                 app:layout_constraintVertical_bias="1.0" />
 
             <Button
@@ -237,6 +236,7 @@
                 android:id="@+id/ChangelogTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:background="@android:color/transparent"
                 android:backgroundTint="@android:color/transparent"
                 android:text="Changelog"
@@ -251,12 +251,23 @@
 
                 <include
                     android:id="@+id/include"
-                    layout="@layout/chnagelog"
+                    layout="@layout/beta_changelog"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </ScrollView>
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
+
+    <ImageButton
+        android:id="@+id/settingsButton2"
+        android:layout_width="37dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_settings_black_24dp" />
 
 </android.support.constraint.ConstraintLayout>
