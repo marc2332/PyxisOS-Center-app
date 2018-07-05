@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:theme="@style/AppTheme.NoActionBar"
     android:background="#FFFFFF"
-    tools:context=".faq">
+    tools:context=".FaqActivity">
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab1"
@@ -17,6 +17,7 @@
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="@android:color/background_light"
         app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
 
     <TextView

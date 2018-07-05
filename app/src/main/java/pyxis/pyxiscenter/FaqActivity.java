@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class faq extends AppCompatActivity {
+public class FaqActivity extends AppCompatActivity {
     TextView Faq;
     private FloatingActionButton fab;
     @Override

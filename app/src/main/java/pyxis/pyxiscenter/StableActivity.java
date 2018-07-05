@@ -2,6 +2,7 @@ package pyxis.pyxiscenter;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class StableActivity extends AppCompatActivity {
 
     String version;
     TextView text;
@@ -43,21 +44,33 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        addListenerOnButton();
+
         addListenerOnButton2();
         addListenerOnButton3();
         addListenerOnButton4();
         addListenerOnButton5();
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Product Sans Bold.ttf");
         TextView title = (TextView) findViewById(R.id.title);
-        TextView version = (TextView) findViewById(R.id.VT);
-        TextView version2 = (TextView) findViewById(R.id.version);
-        TextView changelog = (TextView) findViewById(R.id.ChangelogTitle);
+        TextView version = (TextView) findViewById(R.id.version);
+        TextView version2 = (TextView) findViewById(R.id.versiontext);
+
         title.setTypeface(font);
         version.setTypeface(font);
         version2.setTypeface(font);
-        changelog.setTypeface(font);
 
+        FloatingActionButton fab1 = (FloatingActionButton) findViewById(R.id.fab1);
+        fab1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                String url = getResources().getString(R.string.linkStable);
+
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
 
         imageButton5 = (ImageButton) findViewById(R.id.imageButton5);
 
@@ -66,12 +79,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(getApplicationContext(), faq.class);
+                Intent i = new Intent(getApplicationContext(), FaqActivity.class);
                 startActivity(i);
             }
         });
 
-        settings = (ImageButton) findViewById(R.id.settingsButton);
+        settings = (ImageButton) findViewById(R.id.settings);
         settings.setOnClickListener(new View.OnClickListener() {
 
 
@@ -93,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
     public void CreateAlertDialogWithRadioButtonGroup() {
 
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(StableActivity.this);
 
         builder.setTitle("Choose your version");
 
@@ -121,35 +134,13 @@ public class MainActivity extends AppCompatActivity {
     }
     void reset2(){
 
-        Intent i = new Intent(getApplicationContext(), faq.class);
+        Intent i = new Intent(getApplicationContext(), FaqActivity.class);
         startActivity(i);
 
 
     }
 
-    public void addListenerOnButton() {
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
 
-
-            @Override
-            public void onClick(View view) {
-
-                String url = getResources().getString(R.string.linkStable);
-
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-
-
-
-
-            }
-
-
-        });
-
-    }
     public void addListenerOnButton2() {
         imageButton = (ImageButton) findViewById(R.id.imageButton);
         imageButton.setOnClickListener(new View.OnClickListener() {
@@ -176,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String url = "https://t.me/nosorion";
+                String url = "https://t.me/pyxisos";
 
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
@@ -239,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
 
         new AlertDialog.Builder(this)
                 .setTitle("About Pyxis")
-                .setMessage("Pyxisn is a modified ROM based on official Nitrogen OS with some significant improvements.\n" +
+                .setMessage("Pyxis OS is a modified ROM based on official Nitrogen OS with some significant improvements.\n" +
                         "\n" +
                         "Developer of Pyxis ROM: saurus280 and mkenzo_8\n" +
                         "\n" +

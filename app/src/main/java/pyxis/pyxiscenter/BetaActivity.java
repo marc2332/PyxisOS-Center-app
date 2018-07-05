@@ -5,19 +5,16 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class BetaActivity extends AppCompatActivity {
 
-    String version;
-    TextView text;
-    Button button;
     ImageButton imageButton;
     ImageButton imageButton2;
     ImageButton imageButton3;
@@ -25,10 +22,10 @@ public class BetaActivity extends AppCompatActivity {
     ImageButton imageButton5;
     ImageButton settings;
     TextView title;
-    String string;
-
-    TextView version2;
     TextView changelog;
+    TextView versiontext;
+    TextView version;
+    FloatingActionButton fab1;
 
     AlertDialog alertDialog1;
     CharSequence[] values = {" Stable version", " Beta version"};
@@ -42,22 +39,34 @@ public class BetaActivity extends AppCompatActivity {
 
 
 
-        addListenerOnButton();
         addListenerOnButton2();
         addListenerOnButton3();
         addListenerOnButton4();
         addListenerOnButton5();
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Product Sans Bold.ttf");
-        TextView title = (TextView) findViewById(R.id.title2);
-        TextView version = (TextView) findViewById(R.id.VT);
-        TextView version2 = (TextView) findViewById(R.id.version);
-        TextView changelog = (TextView) findViewById(R.id.ChangelogTitle);
+        TextView title = (TextView) findViewById(R.id.title);
+        TextView version = (TextView) findViewById(R.id.version);
+        TextView versiontext = (TextView) findViewById(R.id.versiontext);
+
         title.setTypeface(font);
         version.setTypeface(font);
-        version2.setTypeface(font);
-        changelog.setTypeface(font);
+        versiontext.setTypeface(font);
 
 
+
+        FloatingActionButton fab1 = (FloatingActionButton) findViewById(R.id.fab1);
+        fab1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                String url = getResources().getString(R.string.linkBeta);
+
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
         imageButton5 = (ImageButton) findViewById(R.id.imageButton5);
 
         imageButton5.setOnClickListener(new View.OnClickListener() {
@@ -65,12 +74,12 @@ public class BetaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(getApplicationContext(), faq.class);
+                Intent i = new Intent(getApplicationContext(), FaqActivity.class);
                 startActivity(i);
             }
         });
 
-        settings = (ImageButton) findViewById(R.id.settingsButton2);
+        settings = (ImageButton) findViewById(R.id.settings);
         settings.setOnClickListener(new View.OnClickListener() {
 
 
@@ -102,7 +111,7 @@ public class BetaActivity extends AppCompatActivity {
                     case 0:
 
                         finish();
-                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent i = new Intent(getApplicationContext(), StableActivity.class);
                         startActivity(i);
                         break;
 
@@ -122,29 +131,7 @@ public class BetaActivity extends AppCompatActivity {
     }
 
 
-    public void addListenerOnButton() {
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
 
-
-            @Override
-            public void onClick(View view) {
-
-                String url = getResources().getString(R.string.linkBeta);
-
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-
-
-
-
-            }
-
-
-        });
-
-    }
     public void addListenerOnButton2() {
         imageButton = (ImageButton) findViewById(R.id.imageButton);
         imageButton.setOnClickListener(new View.OnClickListener() {
@@ -171,7 +158,7 @@ public class BetaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String url = "https://t.me/nosorion";
+                String url = "https://t.me/pyxisos";
 
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
@@ -234,7 +221,7 @@ public class BetaActivity extends AppCompatActivity {
 
         new AlertDialog.Builder(this)
                 .setTitle("About Pyxis")
-                .setMessage("Pyxisn is a modified ROM based on official Nitrogen OS with some significant improvements.\n" +
+                .setMessage("Pyxis OS is a modified ROM based on official Nitrogen OS with some significant improvements.\n" +
                         "\n" +
                         "Developer of Pyxis ROM: saurus280 and mkenzo_8\n" +
                         "\n" +
